@@ -1,6 +1,6 @@
 import unittest
-from markdown_document_builder import *
-from markdown_writer import *
+from .markdown_document_builder import *
+from .markdown_writer import *
 
 class MarkdownWriterTest(unittest.TestCase):
     def when_the_document_is_written(self, document : MarkdownDocument) -> str:

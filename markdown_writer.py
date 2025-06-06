@@ -1,5 +1,5 @@
-from markdown_document import *
-import list_utilities
+from .markdown_document import *
+from . import list_utilities
 
 class MarkdownWriter:
     def write(self, document : MarkdownDocument) -> str:

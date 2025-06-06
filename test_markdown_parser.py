@@ -1,5 +1,5 @@
 import unittest
-from markdown_parser import *
+from .markdown_parser import *
 
 class ParserTestCase(unittest.TestCase):
     def when_the_input_is_parsed(self, input : str) -> MarkdownDocument:

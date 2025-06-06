@@ -1,4 +1,4 @@
-from markdown_document import *
+from .markdown_document import *
 
 class MarkdownDocumentBuilder:
     def __init__(self) -> None:

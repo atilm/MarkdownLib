@@ -1,5 +1,5 @@
 import re
-from markdown_document import *
+from .markdown_document import *
 
 class TableRowException(Exception):
     def __init__(self, lineNumber : int, *args: object) -> None:
