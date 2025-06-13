@@ -40,3 +40,13 @@ class the_table_reports_column_widths(unittest.TestCase):
             .build()
 
         self.then_the_table_has_column_widths(givenTable, [len("ANT-12"), len("Description"), len("third")])
+
+    def test_a_table_header_can_be_compared(self):
+        givenTable = MarkdownTableBuilder()\
+            .withHeader(" Id ", "Description")\
+            .withRow("ANT-1", "A long description")\
+            .build()
+
+        self.assertTrue(givenTable.hasHeader(["Id", "Description "]))
+        self.assertFalse(givenTable.hasHeader(["Id", "Description", "Third"]))
+        self.assertFalse(givenTable.hasHeader(["Id", "DescriptioN"]))

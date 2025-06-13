@@ -50,6 +50,16 @@ class MarkdownTable:
 
     def getRowCount(self) -> int:
         return len(self.rows)
+    
+    def hasHeader(self, cells: list[str]) -> bool:
+        if len(cells) != self.getColumnCount():
+            return False
+        
+        for lhs, rhs in zip(cells, self._headerRow._cells):
+            if lhs.strip() != rhs.strip():
+                return False
+        
+        return True
 
     def getCell(self, rowIndex: int, columnIndex: int) -> str:
         return self.rows[rowIndex].get(columnIndex)
