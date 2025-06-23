@@ -63,6 +63,12 @@ class MarkdownTable:
 
     def getCell(self, rowIndex: int, columnIndex: int) -> str:
         return self.rows[rowIndex].get(columnIndex)
+    
+    def getRow(self, rowIndex: int) -> list[str]:
+        if rowIndex < 0 or rowIndex >= len(self.rows):
+            return []
+        
+        return self.rows[rowIndex]._cells
 
     def _getColumnWidths(self, rowEntries : list) -> list:
         return [len(s) for s in rowEntries]
